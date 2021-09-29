@@ -1,5 +1,6 @@
 package com.view;
 
 public interface DisplayInterface {
-    int askForSizeArray();
+    int getSizeOfArray();
+    String getSortingChoice();
 }
