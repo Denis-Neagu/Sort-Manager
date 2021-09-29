@@ -20,4 +20,11 @@ public class Display implements DisplayInterface{
     public String getSortingChoice(){
         return scan.next();
     }
+
+    @Override
+    public void displaySortingAlgorithms() {
+        System.out.println("B for Bubble Sort");
+        System.out.println("M for Merge Sort");
+        System.out.println("Q for Quick Sort");
+    }
 }

@@ -9,6 +9,8 @@ public class SortManager {
         int x = display.getSizeOfArray();
 
         System.out.println("What sorting method would you like to implement?");
+        display.displaySortingAlgorithms();
+
         String choice = display.getSortingChoice();
 
     }

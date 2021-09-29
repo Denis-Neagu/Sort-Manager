@@ -6,11 +6,11 @@ import com.model.QuickSort;
 
 public class ObjectFactory {
     public Object getInstance(String key) {
-        if (key.equals("BubbleSort")) {
+        if (key.equals("B")) {
             return new BubbleSort();
-        } else if (key.equals("MergeSort")) {
+        } else if (key.equals("M")) {
             return new MergeSort();
-        } else if (key.equals("QuickSort")) {
+        } else if (key.equals("Q")) {
             return new QuickSort();
         } else {
             return null;
