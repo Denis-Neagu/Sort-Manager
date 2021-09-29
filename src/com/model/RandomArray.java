@@ -9,7 +9,7 @@ public class RandomArray implements RandomArrayInterface{
         Random rand = new Random();
         int[] array = new int[arraySize];
         for (int i = 0; i < arraySize; i++) {
-            array[i] = rand.nextInt(100);
+            array[i] = rand.nextInt(1000);
         }
         return array;
     }

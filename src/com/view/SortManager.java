@@ -31,9 +31,13 @@ public class SortManager {
 
             Sort sort = (Sort) ObjectFactory.getInstance(choice);
             if (sort != null) {
+                long time1 = System.nanoTime();
                 sort.sort(array);
+                long time2 = System.nanoTime();
+                long timeTook = (time2-time1);
                 System.out.println("Sorted Array:");
                 display.displayArray(array);
+                System.out.println(timeTook);
             } else {
                 System.out.println("You didn't input a correct input for sorting method");
             }
