@@ -5,7 +5,7 @@ import com.model.MergeSort;
 import com.model.QuickSort;
 
 public class ObjectFactory {
-    public Object getInstance(String key) {
+    public static Object getInstance(String key) {
         if (key.equals("B")) {
             return new BubbleSort();
         } else if (key.equals("M")) {
