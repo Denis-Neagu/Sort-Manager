@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Display implements DisplayInterface{
     Scanner scan = new Scanner(System.in);
 
-
     @Override
     public int getSizeOfArray() {
         int size = scan.nextInt();
@@ -19,7 +18,6 @@ public class Display implements DisplayInterface{
 
     @Override
     public String getSortingChoice(){
-
-        return null;
+        return scan.next();
     }
 }

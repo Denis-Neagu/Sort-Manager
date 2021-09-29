@@ -7,7 +7,9 @@ public class SortManager {
         System.out.println("Input size of array between 3 and 50: ");
 
         int x = display.getSizeOfArray();
-        System.out.println(x);
+
+        System.out.println("What sorting method would you like to implement?");
+        String choice = display.getSortingChoice();
 
     }
 
