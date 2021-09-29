@@ -1,5 +1,6 @@
 package com.view;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Display implements DisplayInterface{
@@ -26,5 +27,10 @@ public class Display implements DisplayInterface{
         System.out.println("B for Bubble Sort");
         System.out.println("M for Merge Sort");
         System.out.println("Q for Quick Sort");
+    }
+
+    @Override
+    public void displayArray(int[] array) {
+        System.out.println(Arrays.toString(array));
     }
 }
