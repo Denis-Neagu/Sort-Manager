@@ -34,6 +34,8 @@ public class SortManager {
             String userChoice = display.continuationChoice();
             if(userChoice.equalsIgnoreCase("Y")) {
                 userContinuation=true;
+            } else if (userChoice.equalsIgnoreCase("N")) {
+                userContinuation=false;
             }
         }
         while (userContinuation);

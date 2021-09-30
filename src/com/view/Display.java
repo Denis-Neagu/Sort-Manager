@@ -13,9 +13,11 @@ public class Display implements DisplayInterface{
             int size = scan.nextInt();
             if (size >=3 && size <= 50) {
                 return size;
+            } else {
+                throw new InputMismatchException("You did not input a number a number from 3-50\nGoodbye!");
             }
         } catch (InputMismatchException e) {
-            System.out.println("Program received " + e.getMessage() + " because you did not input a number\nGoodbye!");
+            System.out.println(e.getMessage());
             System.exit(1);
         }
         return -1;
@@ -41,6 +43,8 @@ public class Display implements DisplayInterface{
     @Override
     public boolean runIterations(String choice){
         if (choice.equalsIgnoreCase("Y")) {
+            return true;
+        } else if (choice.equalsIgnoreCase("N")) {
             return true;
         } else {
             return false;
