@@ -50,6 +50,8 @@ public class SortManager {
             } else {
                 System.out.println("You didn't input a correct input for sorting method");
             }
+        } else {
+            System.out.println("You must input a number from 3-50 next time");
         }
     }
 }

@@ -15,7 +15,7 @@ public class Display implements DisplayInterface{
                 return size;
             }
         } catch (InputMismatchException e) {
-            System.out.println("Program received " + e.getMessage() + " because you did not input a number between from 3-50\nGoodbye!");
+            System.out.println("Program received " + e.getMessage() + " because you did not input a number\nGoodbye!");
             System.exit(1);
         }
         return -1;
