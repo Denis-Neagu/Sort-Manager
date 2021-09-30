@@ -30,14 +30,7 @@ public class SortManager {
                 oldArray = array.clone();
             } else {
                 array = oldArray;
-                List<Integer> tempList = new ArrayList<>();
-                for (int i : array) {
-                    tempList.add(i);
-                }
-                List<Integer> immutable = Collections.unmodifiableList(tempList);
-
                 int[] newArr = array.clone();
-
                 array = newArr;
 
             }
