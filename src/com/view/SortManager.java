@@ -17,6 +17,7 @@ public class SortManager {
         int userArraySizeInput = 0;
         int[] array = null;
         int[] oldArray = null;
+        int[] tempArray = null;
 
         do {
             System.out.println("Input size of array between 3 and 50: ");
@@ -24,8 +25,10 @@ public class SortManager {
             if (prevSize != userArraySizeInput) {
                 array = randomArray.randomArray(userArraySizeInput);
                 oldArray = array.clone();
+                tempArray = oldArray.clone();
             } else {
                 array = oldArray;
+                oldArray = tempArray;
             }
 
             sortManager.controller(userArraySizeInput, array);
@@ -64,8 +67,6 @@ public class SortManager {
             } else {
                 System.out.println("You didn't input a correct input for sorting method. Can we get you to try again?");
             }
-        } else {
-            System.out.println("You must input a number from 3-50 next time. Can we get you to try again?");
         }
     }
 }
