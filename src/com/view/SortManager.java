@@ -5,6 +5,10 @@ import com.controller.ValidInput;
 import com.model.RandomArray;
 import com.model.Sort;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class SortManager {
     static Display display = new Display();
     static ValidInput validInput = new ValidInput();
@@ -12,25 +16,41 @@ public class SortManager {
 
     public static void main(String[] args) {
         SortManager sortManager = new SortManager();
-        String userChoice = display.continuationChoice();
-        boolean userContinuation = display.runIterations(userChoice);
+        boolean userContinuation = false;
+        int prevSize = 0;
+        int userArraySizeInput = 0;
+        int[] array = null;
+        int[] oldArray = null;
 
-        while (userContinuation) {
-            sortManager.controller();
-            userChoice = display.continuationChoice();
-            if(!userChoice.equalsIgnoreCase("Y")) {
+        do {
+            System.out.println("Input size of array between 3 and 50: ");
+            userArraySizeInput = display.getSizeOfArray();
+            if (prevSize != userArraySizeInput) {
+                array = randomArray.randomArray(userArraySizeInput);
+                oldArray = array.clone();
+            } else {
+                array = oldArray;
+                int[] newArr = array.clone();
+                array = newArr;
+
+            }
+
+            sortManager.controller(userArraySizeInput, array);
+            prevSize = userArraySizeInput;
+
+            String userChoice = display.continuationChoice();
+            if(userChoice.equalsIgnoreCase("Y")) {
+                userContinuation=true;
+            } else if (userChoice.equalsIgnoreCase("N")) {
                 userContinuation=false;
             }
         }
+        while (userContinuation);
     }
 
-    public void controller() {
-        System.out.println("Input size of array between 3 and 50: ");
-        int userArraySizeInput = display.getSizeOfArray();
+    public void controller(int userArraySizeInput, int[] array) {
         boolean userArraySizeInputValid = validInput.checkUserInput(userArraySizeInput);
-
         if (userArraySizeInputValid) {
-            int[] array = randomArray.randomArray(userArraySizeInput);
             System.out.println("Unsorted Array:");
             display.displayArray(array);
 
@@ -44,11 +64,12 @@ public class SortManager {
                 sort.sort(array);
                 long time2 = System.nanoTime();
                 long timeTook = (time2-time1);
+
                 System.out.println("Sorted Array:");
                 display.displayArray(array);
-                System.out.println(timeTook);
+                System.out.println("time taken = " + timeTook);
             } else {
-                System.out.println("You didn't input a correct input for sorting method");
+                System.out.println("You didn't input a correct input for sorting method. Can we get you to try again?");
             }
         }
     }
