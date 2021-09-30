@@ -5,6 +5,10 @@ import com.controller.ValidInput;
 import com.model.RandomArray;
 import com.model.Sort;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class SortManager {
     static Display display = new Display();
     static ValidInput validInput = new ValidInput();
@@ -23,9 +27,19 @@ public class SortManager {
             userArraySizeInput = display.getSizeOfArray();
             if (prevSize != userArraySizeInput) {
                 array = randomArray.randomArray(userArraySizeInput);
-                 oldArray = array.clone();
+                oldArray = array.clone();
             } else {
                 array = oldArray;
+                List<Integer> tempList = new ArrayList<>();
+                for (int i : array) {
+                    tempList.add(i);
+                }
+                List<Integer> immutable = Collections.unmodifiableList(tempList);
+
+                int[] newArr = array.clone();
+
+                array = newArr;
+
             }
 
             sortManager.controller(userArraySizeInput, array);
