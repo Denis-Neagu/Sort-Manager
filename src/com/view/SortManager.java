@@ -48,10 +48,10 @@ public class SortManager {
                 display.displayArray(array);
                 System.out.println(timeTook);
             } else {
-                System.out.println("You didn't input a correct input for sorting method");
+                System.out.println("You didn't input a correct input for sorting method. Can we get you to try again?");
             }
         } else {
-            System.out.println("You must input a number from 3-50 next time");
+            System.out.println("You must input a number from 3-50 next time. Can we get you to try again?");
         }
     }
 }
