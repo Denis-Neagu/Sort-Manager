@@ -12,7 +12,16 @@ public class SortManager {
 
     public static void main(String[] args) {
         SortManager sortManager = new SortManager();
-        sortManager.controller();
+        String userChoice = display.continuationChoice();
+        boolean userContinuation = display.runIterations(userChoice);
+
+        while (userContinuation) {
+            sortManager.controller();
+            userChoice = display.continuationChoice();
+            if(!userChoice.equalsIgnoreCase("Y")) {
+                userContinuation=false;
+            }
+        }
     }
 
     public void controller() {

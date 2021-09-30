@@ -33,4 +33,19 @@ public class Display implements DisplayInterface{
     public void displayArray(int[] array) {
         System.out.println(Arrays.toString(array));
     }
+
+    @Override
+    public boolean runIterations(String choice){
+        if (choice.equalsIgnoreCase("Y")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public String continuationChoice() {
+        System.out.println("Would you like to Start/Continue? \n Y = Yes, N = No");
+        return scan.next();
+    }
 }
