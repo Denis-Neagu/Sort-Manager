@@ -27,6 +27,8 @@ Create a Sort Manager application which allows a user to compare a variety of di
 
 - [x] User Input
 
+- [x] Program Iterations Dependent on User Input
+
 - [ ] Exception Handling
 
 - [ ] JUnit Tests
