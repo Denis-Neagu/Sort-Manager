@@ -49,7 +49,17 @@ public class Display implements DisplayInterface{
 
     @Override
     public String continuationChoice() {
-        System.out.println("Would you like to Start/Continue? \n Y = Yes, N = No");
-        return scan.next();
+        try {
+            System.out.println("Would you like to Start/Continue? \n Y = Yes, N = No");
+            String choice = scan.next();
+            if (!runIterations(choice)) {
+                throw new InputMismatchException("ERROR. Input was not Yes or No");
+            }
+            return choice;
+        }catch (InputMismatchException e){
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
+        return null;
     }
 }
