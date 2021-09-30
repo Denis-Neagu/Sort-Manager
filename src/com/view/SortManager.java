@@ -5,10 +5,6 @@ import com.controller.ValidInput;
 import com.model.RandomArray;
 import com.model.Sort;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class SortManager {
     static Display display = new Display();
     static ValidInput validInput = new ValidInput();
