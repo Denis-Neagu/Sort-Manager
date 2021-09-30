@@ -1,6 +1,7 @@
 package com.view;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Display implements DisplayInterface{
@@ -8,13 +9,16 @@ public class Display implements DisplayInterface{
 
     @Override
     public int getSizeOfArray() {
-        int size = scan.nextInt();
-        if (size >=3 && size <= 50) {
-            return size;
-        } else {
-            System.out.println("You need to input a number between 3 and 50");
-            return -1;
+        try {
+            int size = scan.nextInt();
+            if (size >=3 && size <= 50) {
+                return size;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Program received " + e.getMessage() + " because you did not input a number between from 3-50\nGoodbye!");
+            System.exit(1);
         }
+        return -1;
     }
 
     @Override
