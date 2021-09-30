@@ -17,18 +17,15 @@ public class SortManager {
         int userArraySizeInput = 0;
         int[] array = null;
         int[] oldArray = null;
-        int[] tempArray = null;
 
         do {
             System.out.println("Input size of array between 3 and 50: ");
             userArraySizeInput = display.getSizeOfArray();
             if (prevSize != userArraySizeInput) {
                 array = randomArray.randomArray(userArraySizeInput);
-                oldArray = array.clone();
-                tempArray = oldArray.clone();
+                 oldArray = array.clone();
             } else {
                 array = oldArray;
-                oldArray = tempArray;
             }
 
             sortManager.controller(userArraySizeInput, array);
