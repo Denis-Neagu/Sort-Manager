@@ -33,7 +33,6 @@ public class SortManager {
                 array = oldArray;
                 int[] newArr = array.clone();
                 array = newArr;
-
             }
 
             sortManager.controller(userArraySizeInput, array);
