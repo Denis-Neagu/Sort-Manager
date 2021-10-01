@@ -1,5 +1,7 @@
 package com.view;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import com.controller.ObjectFactory;
 import com.controller.ValidInput;
 import com.model.RandomArray;
@@ -9,8 +11,11 @@ public class SortManager {
     static Display display = new Display();
     static ValidInput validInput = new ValidInput();
     static RandomArray randomArray = new RandomArray();
+    private static Logger log = Logger.getLogger("SortManagerLogger");
 
     public static void main(String[] args) {
+        PropertyConfigurator.configure("log4j.properties");
+
         SortManager sortManager = new SortManager();
         boolean userContinuation = false;
         int prevSize = 0;
@@ -65,6 +70,7 @@ public class SortManager {
                 display.displayArray(array);
                 System.out.println("time taken = " + timeTook);
             } else {
+                log.warn("Expected B/b, M/m, or Q/q, but neither was provided");
                 System.out.println("You didn't input a correct input for sorting method. Can we get you to try again?");
             }
         }
