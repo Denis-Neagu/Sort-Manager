@@ -3,9 +3,12 @@ package com.view;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 public class Display implements DisplayInterface{
     Scanner scan = new Scanner(System.in);
+    private static Logger log = Logger.getLogger("Display Logger");
 
     @Override
     public int getSizeOfArray() {
@@ -62,6 +65,10 @@ public class Display implements DisplayInterface{
             String choice = scan.next();
             if (!runIterations(choice)) {
                 throw new InputMismatchException("ERROR. Input was not Yes or No.\nGoodbye!");
+            }
+            if (runIterations(choice) && choice.equalsIgnoreCase("N")) {
+                log.setLevel(Level.INFO);
+                log.info("User has quit the program");
             }
             return choice;
         }catch (InputMismatchException e){
