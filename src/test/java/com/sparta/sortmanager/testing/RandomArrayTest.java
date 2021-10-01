@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RandomArrayTest {
 
     @Test
-    public void doesMethodReturnArray() {
+    public void randomArray_ReturnsArray() {
         RandomArray randomArray = new RandomArray();
         int[] tempArr = randomArray.randomArray(10);
         assertArrayEquals(tempArr,tempArr);

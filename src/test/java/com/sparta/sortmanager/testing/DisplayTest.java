@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class  DisplayTest {
 
     @Test
-    public void runIterationsWithoutCaseSensitivity() {
+    public void runIterations_WithUpperCase() {
         Display display = new Display();
 
         boolean inputY = display.runIterations("N");
@@ -18,7 +18,7 @@ public class  DisplayTest {
     }
 
     @Test
-    public void runIterationTestWithCaseSensitive() {
+    public void runIterations_WithLowerCase() {
         Display display = new Display();
 
         boolean inputSmallY = display.runIterations("y");
@@ -29,7 +29,7 @@ public class  DisplayTest {
     }
 
     @Test
-    public void runIterationsWithInvalidInput() {
+    public void runIterations_WithInvalidInput() {
         Display display = new Display();
 
         boolean otherInput = display.runIterations("q");
