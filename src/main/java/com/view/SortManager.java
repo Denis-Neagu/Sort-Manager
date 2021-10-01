@@ -1,5 +1,7 @@
 package com.view;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import com.controller.ObjectFactory;
 import com.controller.ValidInput;
 import com.model.RandomArray;
@@ -9,8 +11,11 @@ public class SortManager {
     static Display display = new Display();
     static ValidInput validInput = new ValidInput();
     static RandomArray randomArray = new RandomArray();
+    private static Logger logger = Logger.getLogger("Sort Manager");
 
     public static void main(String[] args) {
+        PropertyConfigurator.configure("log4j.properties");
+
         SortManager sortManager = new SortManager();
         boolean userContinuation = false;
         int prevSize = 0;
