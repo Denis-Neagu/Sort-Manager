@@ -11,7 +11,7 @@ public class SortManager {
     static Display display = new Display();
     static ValidInput validInput = new ValidInput();
     static RandomArray randomArray = new RandomArray();
-    private static Logger logger = Logger.getLogger("Sort Manager");
+    private static Logger log = Logger.getLogger("SortManagerLogger");
 
     public static void main(String[] args) {
         PropertyConfigurator.configure("log4j.properties");
@@ -70,6 +70,7 @@ public class SortManager {
                 display.displayArray(array);
                 System.out.println("time taken = " + timeTook);
             } else {
+                log.warn("Expected B/b, M/m, or Q/q, but neither was provided");
                 System.out.println("You didn't input a correct input for sorting method. Can we get you to try again?");
             }
         }
