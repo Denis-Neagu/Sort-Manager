@@ -31,6 +31,6 @@ Create a Sort Manager application which allows a user to compare a variety of di
 
 - [x] Exception Handling
 
-- [ ] JUnit Tests
+- [x] JUnit Tests
 
-- [ ] Loggers
+- [x] Loggers
