@@ -1,12 +1,9 @@
 package com.controller;
 
-import com.model.BubbleSort;
-import com.model.MergeSort;
-import com.model.QuickSort;
-import com.model.SelectionSort;
+import com.model.*;
 
 public class ObjectFactory {
-    public static Object getInstance(String key) {
+    public static Sort getInstance(String key) {
         if (key.equalsIgnoreCase("B")) {
             return new BubbleSort();
         } else if (key.equalsIgnoreCase("M")) {

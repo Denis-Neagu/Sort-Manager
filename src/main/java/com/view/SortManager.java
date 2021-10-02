@@ -58,7 +58,7 @@ public class SortManager {
             display.displaySortingAlgorithms();
             String choice = display.getSortingChoice();
 
-            Sort sort = (Sort) ObjectFactory.getInstance(choice);
+            Sort sort = ObjectFactory.getInstance(choice);
             if (sort != null) {
                 long time1 = System.nanoTime();
                 sort.sort(array);
