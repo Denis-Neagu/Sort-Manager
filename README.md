@@ -21,6 +21,8 @@ Create a Sort Manager application which allows a user to compare a variety of di
 
 - [x] Sorting Algorithms
 
+- [x] Display Time Taken
+
 - [x] Validation Checks
 
 - [x] OOP & SOLID Principles
