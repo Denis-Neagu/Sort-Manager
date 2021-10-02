@@ -67,7 +67,7 @@ public class SortManager {
 
                 System.out.println("Sorted Array:");
                 display.displayArray(array);
-                System.out.println("time taken = " + timeTook);
+                System.out.println("time taken = " + timeTook + "ns\n");
             } else {
                 log.warn("Expected B/b, M/m, Q/q, or S/s, but neither was provided");
                 System.out.println("You didn't input a correct input for sorting method. Can we get you to try again?");
