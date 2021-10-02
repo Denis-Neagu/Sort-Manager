@@ -1,15 +1,21 @@
 package com.sparta.sortmanager.testing;
 
 import com.view.Display;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class  DisplayTest {
+    Display display;
+
+    @BeforeEach
+    public void setUp()  {
+        display = new Display();
+    }
 
     @Test
     public void runIterations_WithUpperCase() {
-        Display display = new Display();
-
         boolean inputY = display.runIterations("N");
         boolean inputN = display.runIterations("Y");
 
@@ -19,8 +25,6 @@ public class  DisplayTest {
 
     @Test
     public void runIterations_WithLowerCase() {
-        Display display = new Display();
-
         boolean inputSmallY = display.runIterations("y");
         boolean inputSmallN = display.runIterations("n");
 
@@ -30,8 +34,6 @@ public class  DisplayTest {
 
     @Test
     public void runIterations_WithInvalidInput() {
-        Display display = new Display();
-
         boolean otherInput = display.runIterations("q");
 
         assertEquals(false, otherInput );
