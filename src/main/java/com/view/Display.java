@@ -42,6 +42,7 @@ public class Display implements DisplayInterface{
         System.out.println("B for Bubble Sort");
         System.out.println("M for Merge Sort");
         System.out.println("Q for Quick Sort");
+        System.out.println("S for Selection Sort");
     }
 
     @Override
@@ -74,7 +75,7 @@ public class Display implements DisplayInterface{
             }
             return choice;
         }catch (InputMismatchException e){
-            log.error("Expected a Y/y or N/n, but neither was provided.");
+            log.error("Expected Y/y or N/n, but neither was provided.");
             System.out.println(e.getMessage());
             System.exit(1);
         }

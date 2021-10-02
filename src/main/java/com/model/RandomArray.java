@@ -3,7 +3,6 @@ package com.model;
 import java.util.Random;
 
 public class RandomArray implements RandomArrayInterface{
-
     @Override
     public int[] randomArray(int arraySize) {
         Random rand = new Random();

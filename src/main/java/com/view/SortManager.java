@@ -69,7 +69,7 @@ public class SortManager {
                 display.displayArray(array);
                 System.out.println("time taken = " + timeTook);
             } else {
-                log.warn("Expected B/b, M/m, or Q/q, but neither was provided");
+                log.warn("Expected B/b, M/m, Q/q, or S/s, but neither was provided");
                 System.out.println("You didn't input a correct input for sorting method. Can we get you to try again?");
             }
         }
